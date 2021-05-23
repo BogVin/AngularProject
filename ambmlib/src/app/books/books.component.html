@@ -1,0 +1,27 @@
+<div class="filter">
+    <input
+      type="text"
+      placeholder="Filter book by title..."
+      [(ngModel)]="searchString"
+    >
+  </div>
+
+  <ul *ngIf="booksService.books.length; else noBooks">
+    <li *ngFor="let book of booksService.books | booksFilter:searchString; let i = index">
+
+      <p>{{book.name}}</p>
+      <p> За авторством {{book.author}}</p>
+
+      <small>{{book.release_year}}</small>
+
+      <p> Жанр {{book.category}}</p>
+    
+      <button class="rm" (click)="removeBook(book.id)">&times;</button>
+    </li>
+  </ul>
+
+  <div>
+  <ng-template #noBooks>
+    <p style="text-align: center;">No books here!</p>
+  </ng-template>
+</div>

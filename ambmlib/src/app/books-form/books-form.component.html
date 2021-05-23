@@ -1,0 +1,33 @@
+<div>
+    <input
+      type="text"
+      placeholder="Тайтл..."
+      [(ngModel)]="name"
+      />
+      <input
+      type="text"
+      placeholder="Категорія..."
+      [(ngModel)]="category"
+      />
+
+      <input
+      type="text"
+      placeholder="Автор..."
+      [(ngModel)]="author"
+      />
+
+      <input
+      type="text"
+      placeholder="Рік релізу..."
+      [(ngModel)]="release_year"
+      />
+
+      <input
+      type="text"
+      placeholder="К-сть сторінок ..."
+      [(ngModel)]="pages"
+      (keydown.enter)="addBook()"
+      />
+    
+    <button (click)="addBook()">Add book</button>
+  </div>
